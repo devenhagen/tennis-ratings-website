@@ -23,8 +23,7 @@ export default function Home() {
             What is Glicko-2?
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mb-4">
-            Developed by Mark Glickman, Glicko-2 builds upon the Elo rating system. 
-            It goes beyond wins and losses, considering the uncertainty in a player's rating and their performance over time. You can read more about Glicko-2{' '}
+            Developed by Mark Glickman, Glicko-2 extends the Elo rating system by considering the uncertainty in a player's rating and their consistency over time. You can read more about Glicko-2{' '}
             <a 
               href="https://www.glicko.net/glicko/glicko2.pdf" 
               target="_blank" 
