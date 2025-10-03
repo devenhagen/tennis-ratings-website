@@ -36,9 +36,9 @@ export default function Navbar() {
                     : 'text-green-100 hover:bg-green-500 hover:text-white'
                 }`}
               >
-                <span className="text-sm sm:text-lg">{item.icon}</span>
+                <span className="hidden sm:inline text-sm sm:text-lg">{item.icon}</span>
                 <span className="hidden sm:inline">{item.label}</span>
-                <span className="sm:hidden">{item.label.charAt(0)}</span>
+                <span className="sm:hidden">{item.label}</span>
               </Link>
             ))}
           </div>
