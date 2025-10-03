@@ -1,0 +1,42 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Tennis court pattern -->
+  <rect x="0" y="200" width="1200" height="230" fill="#ffffff" opacity="0.1"/>
+  <line x1="600" y1="200" x2="600" y2="430" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+  <circle cx="600" cy="315" r="50" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Tennis ball -->
+  <circle cx="200" cy="150" r="40" fill="#ffffff"/>
+  <path d="M160 150 Q200 130 240 150 Q200 170 160 150" fill="#10b981"/>
+  <path d="M160 150 Q200 170 240 150" stroke="#10b981" stroke-width="2" fill="none"/>
+  
+  <!-- Main title -->
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    Tennis Glicko-2 Ratings
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="36" fill="#ffffff" text-anchor="middle" opacity="0.9">
+    Advanced Tennis Player Rankings
+  </text>
+  
+  <!-- Features -->
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle" opacity="0.8">
+    Overall • Hard Court • Clay Court • Grass Court
+  </text>
+  
+  <!-- Bottom text -->
+  <text x="600" y="450" font-family="Arial, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" opacity="0.7">
+    Live surface-aware Glicko-2 rankings for tennis
+  </text>
+</svg>

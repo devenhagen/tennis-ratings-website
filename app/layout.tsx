@@ -13,20 +13,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tennis Glicko-2 Ratings",
-  description: "Advanced tennis player ratings using the Glicko-2 rating system. View rankings for overall, hard court, clay court, and grass court performances.",
+  metadataBase: new URL('https://glicko2-tennis-ratings.vercel.app'),
+  title: {
+    default: 'Tennis Glicko-2 Ratings',
+    template: '%s | Tennis Glicko-2 Ratings',
+  },
+  description: 'Live surface-aware Glicko-2 rankings for tennis. Advanced player ratings for overall, hard court, clay court, and grass court performances.',
   keywords: "tennis, ratings, glicko-2, rankings, ATP, tennis statistics",
   authors: [{ name: "Deven Hagen" }],
   openGraph: {
-    title: "Tennis Glicko-2 Ratings",
-    description: "Advanced tennis player ratings using the Glicko-2 rating system. View rankings for overall, hard court, clay court, and grass court performances.",
-    type: "website",
-    siteName: "Tennis Glicko-2 Ratings",
+    title: 'Tennis Glicko-2 Ratings',
+    description: 'Live surface-aware Glicko-2 rankings for tennis. Advanced player ratings for overall, hard court, clay court, and grass court performances.',
+    url: '/',
+    siteName: 'Tennis Glicko-2 Ratings',
+    images: [{ 
+      url: '/og-image.svg', 
+      width: 1200, 
+      height: 630, 
+      alt: 'Tennis Glicko-2 Ratings' 
+    }],
+    type: 'website',
+    locale: 'en_US',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Tennis Glicko-2 Ratings",
-    description: "Advanced tennis player ratings using the Glicko-2 rating system. View rankings for overall, hard court, clay court, and grass court performances.",
+    card: 'summary_large_image',
+    title: 'Tennis Glicko-2 Ratings',
+    description: 'Live surface-aware Glicko-2 rankings for tennis. Advanced player ratings for overall, hard court, clay court, and grass court performances.',
+    images: ['/og-image.svg'],
   },
 };
 
