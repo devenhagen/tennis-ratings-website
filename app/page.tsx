@@ -1,77 +1,91 @@
 import Image from "next/image";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+      <Navbar />
+      <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-4 pb-20 gap-8 sm:p-8">
+      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start max-w-4xl">
+        {/* Header Section */}
+        <div className="text-center sm:text-left">
+          <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+            Tennis Glicko-2 Ratings
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8">
+            Advanced tennis player ratings using the Glicko-2 rating system for accurate skill assessment
+          </p>
+        </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+        {/* Glicko-2 Explanation */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            What is Glicko-2?
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">
+            Developed by Mark Glickman, Glicko-2 builds upon the Elo rating system. 
+            It goes beyond wins and losses, considering the uncertainty in a player's rating and their performance over time. You can read more about Glicko-2{' '}
+            <a 
+              href="https://www.glicko.net/glicko/glicko2.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 underline transition-colors"
+            >
+              here
+            </a>.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+            <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+              <div className="text-2xl font-bold text-green-600 dark:text-green-400">Rating</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Estimates a player's skill level</div>
+            </div>
+            <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+              <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">Rating Deviation</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Uncertainty in the rating calculation</div>
+            </div>
+            <div className="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+              <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">Volatility</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Measure of consistency</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Modifications Section */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            Modifications
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300">
+            I used a dataset with over 20 years' worth of match results (
+            <a 
+              href="https://www.kaggle.com/datasets/dissfya/atp-tennis-2000-2023daily-pull" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 underline transition-colors"
+            >
+              here's a link
+            </a>
+            ). I experimented with different lengths for each rating period and tuned parameters for volatility. I also developed surface-specific ratings and blended them with overall ratings to decrease variance. The result is rankings that I believe are a better reflection of true skill than the ATP rankings.
+          </p>
+        </div>
+
+        {/* Navigation Links */}
+        <div className="flex gap-4 items-center justify-center w-full">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-green-600 text-white gap-3 hover:bg-green-700 font-medium text-lg sm:text-xl h-14 sm:h-16 px-8 sm:px-10"
+            href="/rankings"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            <span className="text-3xl">📊</span>
+            View the current rankings
           </a>
         </div>
+
       </main>
+      
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-gray-600 dark:text-gray-400"
+          href="/about"
         >
           <Image
             aria-hidden
@@ -80,24 +94,10 @@ export default function Home() {
             width={16}
             height={16}
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
+          About This Site
         </a>
       </footer>
+      </div>
     </div>
   );
 }

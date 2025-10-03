@@ -1,0 +1,101 @@
+rank,name,nationality,rating,RD
+1,Jannik Sinner,ITA,2090.3,72.9
+2,Carlos Alcaraz,ESP,2059.9,64.9
+3,Novak Djokovic,SRB,1929.5,73.7
+4,Jack Draper,GBR,1825.8,72.1
+5,Taylor Fritz,USA,1800.5,57.8
+6,Grigor Dimitrov,BUL,1795.5,78.4
+7,Alexander Zverev,GER,1787.1,61.2
+8,Alex de Minaur,AUS,1773.6,62.8
+9,Lorenzo Musetti,ITA,1748.7,63.6
+10,Ben Shelton,USA,1741.9,60.6
+11,Tommy Paul,USA,1730.9,69.2
+12,Hubert Hurkacz,POL,1729.6,79.3
+13,Jiri Lehecka,CZE,1726.4,64.1
+14,Holger Rune,DEN,1717.3,66.0
+15,Alexander Bublik,KAZ,1712.2,62.2
+16,Daniil Medvedev,RUS,1711.4,64.1
+17,Arthur Fils,FRA,1705.2,73.5
+18,Jakub Mensik,CZE,1700.8,67.2
+19,Casper Ruud,NOR,1700.3,66.7
+20,Matteo Berrettini,ITA,1689.0,75.7
+21,Karen Khachanov,RUS,1688.8,62.0
+22,Jenson Brooksby,USA,1680.5,69.4
+23,Tomas Machac,CZE,1671.6,71.6
+24,Felix Auger-Aliassime,CAN,1669.3,63.2
+25,Alejandro Davidovich Fokina,ESP,1667.4,62.1
+26,Sebastian Korda,USA,1666.3,69.2
+27,Stefanos Tsitsipas,GRE,1650.4,69.5
+28,Flavio Cobolli,ITA,1645.6,62.8
+29,Gabriel Diallo,CAN,1636.4,66.8
+30,Andrey Rublev,RUS,1635.8,61.1
+31,Francisco Cerundolo,ARG,1627.8,64.7
+32,Gael Monfils,FRA,1619.5,74.2
+33,Marton Fucsovics,HUN,1617.4,69.1
+34,Brandon Nakashima,USA,1609.8,59.3
+35,Frances Tiafoe,USA,1608.9,62.6
+36,Tallon Griekspoor,NED,1605.6,65.5
+37,Alexei Popyrin,AUS,1604.1,68.3
+38,Denis Shapovalov,CAN,1600.5,68.2
+39,Hamad Medjedovic,SRB,1599.9,72.4
+40,Reilly Opelka,USA,1597.8,69.0
+41,Ugo Humbert,FRA,1597.7,70.4
+42,Cameron Norrie,GBR,1595.1,64.3
+43,Joao Fonseca,BRA,1594.8,75.4
+44,Fabian Marozsan,HUN,1591.1,64.9
+45,Jordan Thompson,AUS,1589.9,71.4
+46,Corentin Moutet,FRA,1587.1,63.4
+47,Alejandro Tabilo,CHI,1585.8,71.0
+48,Kamil Majchrzak,POL,1584.6,85.0
+49,Learner Tien,USA,1582.9,67.8
+50,Jan-Lennard Struff,GER,1579.5,69.7
+51,Luciano Darderi,ITA,1576.0,61.6
+52,Arthur Rinderknech,FRA,1560.5,63.1
+53,Jaume Munar,ESP,1559.0,63.4
+54,Arthur Cazaux,FRA,1558.2,71.6
+55,Laslo Djere,SRB,1556.0,77.1
+56,Adrian Mannarino,FRA,1556.0,69.9
+57,Jesper De Jong,NED,1551.9,83.3
+58,Alex Michelsen,USA,1546.0,65.1
+59,Roberto Bautista Agut,ESP,1542.5,66.2
+60,Botic van de Zandschulp,NED,1541.5,68.1
+61,Matteo Arnaldi,ITA,1540.6,66.2
+62,Marcos Giron,USA,1539.4,63.3
+63,Jacob Fearnley,GBR,1538.5,77.9
+64,Tomas Martin Etcheverry,ARG,1536.3,63.4
+65,Nuno Borges,POR,1535.9,64.0
+66,Benjamin Bonzi,FRA,1525.3,72.0
+67,Pablo Carreno Busta,ESP,1519.5,81.1
+68,Alexandre Muller,FRA,1517.8,66.3
+69,Juan Manuel Cerundolo,ARG,1513.1,88.8
+70,Francisco Comesana,ARG,1511.7,71.6
+71,Lorenzo Sonego,ITA,1508.7,63.7
+72,Giovanni Mpetshi Perricard,FRA,1506.2,66.6
+73,Miomir Kecmanovic,SRB,1502.5,64.9
+74,Mackenzie McDonald,USA,1502.3,84.8
+75,Mariano Navone,ARG,1498.4,67.4
+76,Zizou Bergs,BEL,1497.9,66.1
+77,Mattia Bellucci,ITA,1497.1,80.3
+78,Alexander Shevchenko,KAZ,1492.2,72.2
+79,Yoshihito Nishioka,JPN,1492.0,78.4
+80,Daniel Altmaier,GER,1483.1,67.5
+81,Nicolas Jarry,CHI,1478.3,72.9
+82,Christopher O'Connell,AUS,1477.7,70.2
+83,Roman Safiullin,RUS,1475.1,72.2
+84,Sebastian Baez,ARG,1471.3,69.3
+85,Sebastian Ofner,AUT,1465.5,76.0
+86,Aleksandar Vukic,AUS,1462.2,66.1
+87,David Goffin,BEL,1457.2,70.6
+88,Camilo Ugo Carabelli,ARG,1454.0,71.8
+89,Adam Walton,AUS,1453.0,78.6
+90,Ethan Quinn,USA,1452.9,81.1
+91,Roberto Carballes Baena,ESP,1452.8,72.8
+92,Yunchaokete Bu,CHN,1452.2,69.6
+93,Nishesh Basavareddy,USA,1450.0,97.0
+94,Damir Dzumhur,BIH,1443.1,72.3
+95,Quentin Halys,FRA,1439.1,72.3
+96,Pedro Martinez,ESP,1437.8,68.9
+97,Dusan Lajovic,SRB,1434.3,82.7
+98,Luca Nardi,ITA,1429.1,92.0
+99,Rinky Hijikata,AUS,1423.9,75.7
+100,James Duckworth,AUS,1409.8,81.9
