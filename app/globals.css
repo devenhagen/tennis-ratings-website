@@ -214,3 +214,49 @@ body {
 .floating:nth-child(3) {
   /* animation-delay: 1s; */
 }
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Reduce animation intensity on mobile for better performance */
+  .animate-float {
+    animation-duration: 8s;
+  }
+  
+  .animate-glow {
+    animation-duration: 3s;
+  }
+  
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text sizing for mobile */
+  .text-4xl {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  
+  .text-6xl {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+  
+  .text-8xl {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Ensure tables are scrollable on mobile */
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+}
