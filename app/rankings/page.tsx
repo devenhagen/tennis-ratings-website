@@ -323,7 +323,6 @@ export default function Rankings() {
           >
             <span className="text-xl group-hover:-translate-x-1 transition-transform duration-300">←</span>
             <span>Back to Home</span>
-            <div className="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </a>
         </div>
       </div>

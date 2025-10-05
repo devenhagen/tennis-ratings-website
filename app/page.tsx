@@ -133,7 +133,7 @@ export default function Home() {
         {/* Navigation Links */}
         <div className="flex gap-6 items-center justify-center w-full">
           <a
-            className="group relative overflow-hidden rounded-3xl bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 text-white font-black text-xl sm:text-2xl h-20 sm:h-24 px-12 sm:px-16 flex items-center justify-center gap-4 hover:from-green-700 hover:via-emerald-700 hover:to-green-800 transition-all duration-500 shadow-2xl hover:shadow-3xl transform hover:scale-110 animate-pulse-glow btn-premium"
+            className="group relative overflow-hidden rounded-3xl bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 text-white font-black text-xl sm:text-2xl h-20 sm:h-24 px-12 sm:px-16 flex items-center justify-center gap-4 hover:from-green-700 hover:via-emerald-700 hover:to-green-800 transition-all duration-500 shadow-2xl hover:shadow-3xl transform hover:scale-110 btn-premium"
             href="/rankings"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer"></div>

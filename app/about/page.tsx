@@ -58,14 +58,13 @@ export default function About() {
 
           {/* Back to Home */}
           <div className="text-center mt-12">
-            <a
-              href="/"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-2xl hover:from-green-700 hover:to-green-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              <span className="text-xl group-hover:-translate-x-1 transition-transform duration-300">←</span>
-              <span>Back to Home</span>
-              <div className="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </a>
+          <a
+            href="/"
+            className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-2xl hover:from-green-700 hover:to-green-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
+            <span className="text-xl group-hover:-translate-x-1 transition-transform duration-300">←</span>
+            <span>Back to Home</span>
+          </a>
           </div>
         </div>
       </div>
