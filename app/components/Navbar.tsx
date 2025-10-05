@@ -13,32 +13,43 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-green-600 to-green-700 shadow-lg border-b border-green-500">
+    <nav className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border-b border-gray-200/50 dark:border-gray-700/50 sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-14 sm:h-16">
+        <div className="flex items-center justify-between h-16 sm:h-18">
           {/* Logo/Brand */}
-          <Link href="/" className="flex items-center space-x-1 sm:space-x-2">
-            <span className="text-lg sm:text-2xl">🎾</span>
-            <span className="text-sm sm:text-xl font-bold text-white">
-              Tennis Glicko-2
-            </span>
+          <Link href="/" className="group flex items-center space-x-3 hover:scale-105 transition-transform duration-300">
+            <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl flex items-center justify-center group-hover:from-green-600 group-hover:to-blue-600 transition-all duration-300">
+              <span className="text-xl">🎾</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300">
+                Tennis Glicko-2
+              </span>
+              <span className="text-xs text-gray-500 dark:text-gray-400 -mt-1">
+                Advanced Ratings
+              </span>
+            </div>
           </Link>
 
           {/* Navigation Links */}
-          <div className="flex space-x-0.5 sm:space-x-1">
+          <div className="flex space-x-2">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg transition-colors font-medium text-xs sm:text-sm ${
+                className={`group relative flex items-center space-x-2 px-4 py-2.5 rounded-xl transition-all duration-300 font-medium text-sm ${
                   pathname === item.href
-                    ? 'bg-white text-green-700 shadow-md'
-                    : 'text-green-100 hover:bg-green-500 hover:text-white'
+                    ? 'bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg shadow-green-500/25'
+                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
                 }`}
               >
-                <span className="hidden sm:inline text-sm sm:text-lg">{item.icon}</span>
+                <span className="text-lg group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
+                </span>
                 <span className="hidden sm:inline">{item.label}</span>
-                <span className="sm:hidden">{item.label}</span>
+                {pathname === item.href && (
+                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
+                )}
               </Link>
             ))}
           </div>

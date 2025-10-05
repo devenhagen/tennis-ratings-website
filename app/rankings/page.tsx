@@ -97,59 +97,73 @@ export default function Rankings() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-blue-50 dark:from-slate-900 dark:via-gray-900 dark:to-gray-800">
       <Navbar />
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Tennis Rankings
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            Last updated: 10/01/2025 <br />
-            Below are the current Glicko-2 ratings (minimum 15 matches played in 2025)
-          </p>
+        <div className="text-center mb-12">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              Live Rankings
+            </div>
+            <h1 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-gray-900 via-green-800 to-blue-800 dark:from-white dark:via-green-300 dark:to-blue-300 bg-clip-text text-transparent leading-tight">
+              Tennis Rankings
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Last updated: 10/01/2025 <br />
+              Below are the current Glicko-2 ratings (minimum 15 matches played in 2025)
+            </p>
+          </div>
           
           {/* Surface Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-6">
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
             {[
-              { key: 'overall', label: 'Overall', icon: '🏆' },
-              { key: 'hard', label: 'Hard Court', icon: '🏟️' },
-              { key: 'clay', label: 'Clay Court', icon: '🏖️' },
-              { key: 'grass', label: 'Grass Court', icon: '🌱' }
+              { key: 'overall', label: 'Overall', icon: '🏆', color: 'from-yellow-500 to-orange-500' },
+              { key: 'hard', label: 'Hard Court', icon: '🏟️', color: 'from-blue-500 to-cyan-500' },
+              { key: 'clay', label: 'Clay Court', icon: '🏖️', color: 'from-orange-500 to-red-500' },
+              { key: 'grass', label: 'Grass Court', icon: '🌱', color: 'from-green-500 to-emerald-500' }
             ].map((surface) => (
               <button
                 key={surface.key}
                 onClick={() => setActiveSurface(surface.key as any)}
-                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                className={`group relative overflow-hidden px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                   activeSurface === surface.key
-                    ? 'bg-green-600 text-white shadow-md'
-                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 border border-gray-200 dark:border-gray-600'
+                    ? `bg-gradient-to-r ${surface.color} text-white shadow-lg shadow-${surface.color.split('-')[1]}-500/25 transform scale-105`
+                    : 'bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 border border-gray-200/50 dark:border-gray-600/50 hover:shadow-lg backdrop-blur-sm'
                 }`}
               >
-                <span className="mr-2">{surface.icon}</span>
-                {surface.label}
+                <div className="flex items-center gap-3">
+                  <span className="text-xl group-hover:scale-110 transition-transform duration-300">
+                    {surface.icon}
+                  </span>
+                  <span>{surface.label}</span>
+                </div>
+                {activeSurface === surface.key && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
+                )}
               </button>
             ))}
           </div>
           
           {/* Search and Sort Controls */}
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-6">
-            <div className="relative">
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-8">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
               <input
                 type="text"
                 placeholder="Search players..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="relative px-6 py-3 border border-gray-300/50 dark:border-gray-600/50 rounded-xl bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white focus:ring-2 focus:ring-green-500/50 focus:border-transparent backdrop-blur-sm transition-all duration-300 w-64"
               />
             </div>
             
-            <div className="flex gap-2">
+            <div className="flex gap-3">
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as 'rank' | 'rating' | 'RD')}
-                className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-green-500"
+                className="px-4 py-3 border border-gray-300/50 dark:border-gray-600/50 rounded-xl bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white focus:ring-2 focus:ring-green-500/50 backdrop-blur-sm transition-all duration-300"
               >
                 <option value="rank">Sort by Rank</option>
                 <option value="rating">Sort by Rating</option>
@@ -158,39 +172,60 @@ export default function Rankings() {
               
               <button
                 onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
-                className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 focus:ring-2 focus:ring-green-500"
+                className="px-4 py-3 border border-gray-300/50 dark:border-gray-600/50 rounded-xl bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 focus:ring-2 focus:ring-green-500/50 backdrop-blur-sm transition-all duration-300 hover:scale-105"
               >
-                {sortOrder === 'asc' ? '↑' : '↓'}
+                <span className="text-lg">{sortOrder === 'asc' ? '↑' : '↓'}</span>
               </button>
             </div>
           </div>
         </div>
 
         {/* Rankings Table */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 overflow-hidden hover:shadow-2xl transition-all duration-300">
           <div className="overflow-x-auto">
             <table className="w-full table-fixed">
-              <thead className="bg-green-600 text-white">
+              <thead className="bg-gradient-to-r from-green-600 to-green-700 text-white">
                 <tr>
                   <th 
-                    className="w-16 px-4 py-4 text-center font-semibold cursor-pointer hover:bg-green-700 transition-colors"
+                    className="w-16 px-4 py-6 text-center font-bold cursor-pointer hover:bg-green-700/80 transition-all duration-300 group"
                     onClick={() => handleSort('rank')}
                   >
-                    Rank {sortBy === 'rank' && (sortOrder === 'asc' ? '↑' : '↓')}
+                    <div className="flex items-center justify-center gap-2">
+                      <span>Rank</span>
+                      {sortBy === 'rank' && (
+                        <span className="text-green-200 group-hover:text-white transition-colors">
+                          {sortOrder === 'asc' ? '↑' : '↓'}
+                        </span>
+                      )}
+                    </div>
                   </th>
-                  <th className="w-48 px-4 py-4 text-left font-semibold">Player</th>
-                  <th className="w-24 px-4 py-4 text-center font-semibold">Nationality</th>
+                  <th className="w-48 px-4 py-6 text-left font-bold">Player</th>
+                  <th className="w-24 px-4 py-6 text-center font-bold">Nationality</th>
                   <th 
-                    className="w-24 px-4 py-4 text-center font-semibold cursor-pointer hover:bg-green-700 transition-colors"
+                    className="w-24 px-4 py-6 text-center font-bold cursor-pointer hover:bg-green-700/80 transition-all duration-300 group"
                     onClick={() => handleSort('rating')}
                   >
-                    Rating {sortBy === 'rating' && (sortOrder === 'asc' ? '↑' : '↓')}
+                    <div className="flex items-center justify-center gap-2">
+                      <span>Rating</span>
+                      {sortBy === 'rating' && (
+                        <span className="text-green-200 group-hover:text-white transition-colors">
+                          {sortOrder === 'asc' ? '↑' : '↓'}
+                        </span>
+                      )}
+                    </div>
                   </th>
                   <th 
-                    className="w-20 px-4 py-4 text-center font-semibold cursor-pointer hover:bg-green-700 transition-colors"
+                    className="w-20 px-4 py-6 text-center font-bold cursor-pointer hover:bg-green-700/80 transition-all duration-300 group"
                     onClick={() => handleSort('RD')}
                   >
-                    RD {sortBy === 'RD' && (sortOrder === 'asc' ? '↑' : '↓')}
+                    <div className="flex items-center justify-center gap-2">
+                      <span>RD</span>
+                      {sortBy === 'RD' && (
+                        <span className="text-green-200 group-hover:text-white transition-colors">
+                          {sortOrder === 'asc' ? '↑' : '↓'}
+                        </span>
+                      )}
+                    </div>
                   </th>
                 </tr>
               </thead>
@@ -198,28 +233,47 @@ export default function Rankings() {
                 {filteredAndSortedPlayers.map((player, index) => (
                   <tr 
                     key={player.rank} 
-                    className={`border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors ${
-                      index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-700'
+                    className={`group border-b border-gray-200/50 dark:border-gray-700/50 hover:bg-gradient-to-r hover:from-green-50/50 hover:to-blue-50/50 dark:hover:from-green-900/20 dark:hover:to-blue-900/20 transition-all duration-300 ${
+                      index % 2 === 0 ? 'bg-white/50 dark:bg-gray-800/50' : 'bg-gray-50/50 dark:bg-gray-700/50'
                     }`}
                   >
-                    <td className="px-4 py-4 text-center font-semibold text-gray-900 dark:text-white">
-                      {player.rank}
+                    <td className="px-4 py-6 text-center">
+                      <div className="flex items-center justify-center">
+                        <span className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300">
+                          {player.rank}
+                        </span>
+                        {player.rank <= 3 && (
+                          <span className="ml-2 text-lg">
+                            {player.rank === 1 ? '🥇' : player.rank === 2 ? '🥈' : '🥉'}
+                          </span>
+                        )}
+                      </div>
                     </td>
-                    <td className="px-4 py-4 text-gray-900 dark:text-white font-medium truncate">
-                      {player.name}
+                    <td className="px-4 py-6">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                          {player.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                        </div>
+                        <span className="text-gray-900 dark:text-white font-semibold truncate group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300">
+                          {player.name}
+                        </span>
+                      </div>
                     </td>
-                    <td className="px-4 py-4 text-center text-gray-600 dark:text-gray-300">
-                      <span className="font-mono text-sm bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">
+                    <td className="px-4 py-6 text-center">
+                      <span className="inline-flex items-center px-3 py-1.5 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-mono text-sm font-medium border border-gray-200 dark:border-gray-600">
                         {player.nationality}
                       </span>
                     </td>
-                    <td className="px-4 py-4 text-center text-gray-900 dark:text-white">
-                      <span className="font-mono text-lg font-semibold text-green-600 dark:text-green-400">
-                        {player.rating.toFixed(1)}
-                      </span>
+                    <td className="px-4 py-6 text-center">
+                      <div className="flex items-center justify-center gap-2">
+                        <span className="text-2xl font-bold bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
+                          {player.rating.toFixed(1)}
+                        </span>
+                        <div className="w-2 h-2 bg-green-500 rounded-full opacity-60"></div>
+                      </div>
                     </td>
-                    <td className="px-4 py-4 text-center text-gray-600 dark:text-gray-300">
-                      <span className="font-mono">
+                    <td className="px-4 py-6 text-center">
+                      <span className="text-lg font-mono text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded-lg">
                         {player.RD.toFixed(1)}
                       </span>
                     </td>
@@ -231,34 +285,45 @@ export default function Rankings() {
         </div>
 
         {/* Stats Summary */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
-            <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105">
+            <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <span className="text-white text-2xl">👥</span>
+            </div>
+            <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
               {players.length}
             </div>
-            <div className="text-gray-600 dark:text-gray-300">Total Players</div>
+            <div className="text-gray-600 dark:text-gray-300 font-medium">Total Players</div>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
-            <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+          <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105">
+            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <span className="text-white text-2xl">🏆</span>
+            </div>
+            <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
               {players.length > 0 ? players[0].rating.toFixed(1) : '0'}
             </div>
-            <div className="text-gray-600 dark:text-gray-300">Highest Rating</div>
+            <div className="text-gray-600 dark:text-gray-300 font-medium">Highest Rating</div>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
-            <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+          <div className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105">
+            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <span className="text-white text-2xl">📊</span>
+            </div>
+            <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
               {players.length > 0 ? (players.reduce((sum, p) => sum + p.rating, 0) / players.length).toFixed(1) : '0'}
             </div>
-            <div className="text-gray-600 dark:text-gray-300">Average Rating</div>
+            <div className="text-gray-600 dark:text-gray-300 font-medium">Average Rating</div>
           </div>
         </div>
 
         {/* Back to Home */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-12">
           <a
             href="/"
-            className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
+            className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-2xl hover:from-green-700 hover:to-green-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
           >
-            ← Back to Home
+            <span className="text-xl group-hover:-translate-x-1 transition-transform duration-300">←</span>
+            <span>Back to Home</span>
+            <div className="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </a>
         </div>
       </div>
