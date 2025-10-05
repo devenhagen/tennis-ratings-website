@@ -25,7 +25,7 @@ export default function Home() {
             <h1 className="text-6xl sm:text-8xl font-black bg-gradient-to-r from-gray-900 via-green-800 to-blue-800 dark:from-white dark:via-green-300 dark:to-blue-300 bg-clip-text text-transparent leading-tight animate-gradient">
               Tennis Glicko-2
               <span className="block text-4xl sm:text-6xl font-bold text-gradient-green mt-2">
-                Ratings
+                Advanced Ratings
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl leading-relaxed font-medium">
