@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: '/',
     siteName: 'Tennis Glicko-2 Ratings',
     images: [{ 
-      url: '/og-image.svg', 
+      url: '/tennis-thumbnail.svg', 
       width: 1200, 
       height: 630, 
       alt: 'Tennis Glicko-2 Ratings' 
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Tennis Glicko-2 Ratings',
     description: 'Live surface-aware Glicko-2 rankings for tennis. Advanced player ratings for overall, hard court, clay court, and grass court performances.',
-    images: ['/og-image.svg'],
+    images: ['/tennis-thumbnail.svg'],
   },
 };
 

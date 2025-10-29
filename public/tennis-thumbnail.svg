@@ -1,0 +1,107 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ecfdf5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0fdf4;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="tennisBallGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="courtGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Tennis court background -->
+  <rect x="0" y="200" width="1200" height="230" fill="url(#courtGradient)" opacity="0.3"/>
+  
+  <!-- Court lines -->
+  <line x1="0" y1="315" x2="1200" y2="315" stroke="#ffffff" stroke-width="3" opacity="0.6"/>
+  <line x1="300" y1="200" x2="300" y2="430" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+  <line x1="900" y1="200" x2="900" y2="430" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+  
+  <!-- Tennis balls -->
+  <g filter="url(#shadow)">
+    <!-- Main tennis ball -->
+    <circle cx="200" cy="180" r="45" fill="url(#tennisBallGradient)" stroke="#e5e7eb" stroke-width="2"/>
+    <path d="M 155 180 A 45 45 0 0 1 245 180" stroke="#22c55e" stroke-width="3" fill="none"/>
+    <path d="M 200 135 A 45 45 0 0 1 200 225" stroke="#22c55e" stroke-width="3" fill="none"/>
+    
+    <!-- Secondary tennis ball -->
+    <circle cx="1000" cy="250" r="35" fill="url(#tennisBallGradient)" stroke="#e5e7eb" stroke-width="2" opacity="0.8"/>
+    <path d="M 965 250 A 35 35 0 0 1 1035 250" stroke="#22c55e" stroke-width="2" fill="none"/>
+    <path d="M 1000 215 A 35 35 0 0 1 1000 285" stroke="#22c55e" stroke-width="2" fill="none"/>
+    
+    <!-- Small tennis ball -->
+    <circle cx="100" cy="400" r="25" fill="url(#tennisBallGradient)" stroke="#e5e7eb" stroke-width="1" opacity="0.6"/>
+    <path d="M 75 400 A 25 25 0 0 1 125 400" stroke="#22c55e" stroke-width="1.5" fill="none"/>
+    <path d="M 100 375 A 25 25 0 0 1 100 425" stroke="#22c55e" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Main title -->
+  <text x="600" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="900" fill="url(#textGradient)" filter="url(#glow)">
+    Tennis Glicko-2
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#374151">
+    Advanced Player Ratings
+  </text>
+  
+  <!-- Features -->
+  <g font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#4b5563">
+    <text x="300" y="500" text-anchor="middle">📊 Real-time Rankings</text>
+    <text x="600" y="500" text-anchor="middle">🎾 Surface-Specific</text>
+    <text x="900" y="500" text-anchor="middle">⚡ Advanced Analytics</text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <g opacity="0.1">
+    <circle cx="150" cy="100" r="60" fill="#22c55e"/>
+    <circle cx="1050" cy="100" r="60" fill="#3b82f6"/>
+    <circle cx="600" cy="550" r="80" fill="#8b5cf6"/>
+  </g>
+  
+  <!-- Rating chart visualization -->
+  <g transform="translate(500, 300)">
+    <!-- Chart bars representing different surfaces -->
+    <rect x="0" y="0" width="40" height="60" fill="#22c55e" opacity="0.8" rx="4"/>
+    <rect x="50" y="0" width="40" height="80" fill="#3b82f6" opacity="0.8" rx="4"/>
+    <rect x="100" y="0" width="40" height="70" fill="#8b5cf6" opacity="0.8" rx="4"/>
+    <rect x="150" y="0" width="40" height="90" fill="#f59e0b" opacity="0.8" rx="4"/>
+    
+    <!-- Chart labels -->
+    <text x="20" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#6b7280">Clay</text>
+    <text x="70" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#6b7280">Hard</text>
+    <text x="120" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#6b7280">Grass</text>
+    <text x="170" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#6b7280">Overall</text>
+  </g>
+</svg>
