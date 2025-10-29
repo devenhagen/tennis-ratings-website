@@ -1,9 +1,8 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Tennis ball with green background for visibility -->
-  <circle cx="16" cy="16" r="15" fill="#22c55e"/>
-  <circle cx="16" cy="16" r="12" fill="#ffffff"/>
+  <!-- Green tennis ball background -->
+  <circle cx="16" cy="16" r="16" fill="#22c55e"/>
   
-  <!-- Bold tennis ball curve lines -->
-  <path d="M 4 16 A 12 12 0 0 1 28 16" stroke="#22c55e" stroke-width="3" fill="none"/>
-  <path d="M 16 4 A 12 12 0 0 1 16 28" stroke="#22c55e" stroke-width="3" fill="none"/>
+  <!-- Two vertical white curved strips -->
+  <path d="M 4 2 A 16 16 0 0 1 4 30" stroke="#ffffff" stroke-width="3" fill="none"/>
+  <path d="M 28 2 A 16 16 0 0 0 28 30" stroke="#ffffff" stroke-width="3" fill="none"/>
 </svg>
