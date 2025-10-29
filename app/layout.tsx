@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   description: 'Live surface-aware Glicko-2 rankings for tennis. Advanced player ratings for overall, hard court, clay court, and grass court performances.',
   keywords: "tennis, ratings, glicko-2, rankings, ATP, tennis statistics",
   authors: [{ name: "Deven Hagen" }],
+  icons: {
+    icon: '/tennis-favicon.svg',
+    shortcut: '/tennis-favicon.svg',
+    apple: '/tennis-favicon.svg',
+  },
   openGraph: {
     title: 'Tennis Glicko-2 Ratings',
     description: 'Live surface-aware Glicko-2 rankings for tennis. Advanced player ratings for overall, hard court, clay court, and grass court performances.',

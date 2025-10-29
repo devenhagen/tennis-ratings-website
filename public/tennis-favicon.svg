@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="16" fill="#22c55e"/>
+  
+  <!-- Tennis ball -->
+  <circle cx="16" cy="16" r="12" fill="#ffffff" stroke="#e5e7eb" stroke-width="0.5"/>
+  
+  <!-- Tennis ball curve lines -->
+  <path d="M 4 16 A 12 12 0 0 1 28 16" stroke="#22c55e" stroke-width="2" fill="none"/>
+  <path d="M 16 4 A 12 12 0 0 1 16 28" stroke="#22c55e" stroke-width="2" fill="none"/>
+  
+  <!-- Small accent dot -->
+  <circle cx="16" cy="16" r="1" fill="#22c55e"/>
+</svg>
